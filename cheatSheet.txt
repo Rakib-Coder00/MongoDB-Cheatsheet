@@ -16,9 +16,14 @@ db.createCollection('myComments')
 Create a collection named 'myComments' 
 db.myComments.drop()
 
-MongoDb commands for rows:-
-Show all Rows in a collection
+*** MongoDb commands for rows:-
+
+Show all Rows in a collection==
 db.comments.find()
+
+Find the first row matching the object==
+db.comments.findOne({name: 'rhb'})
+
 
 insert on Row ==
 db.comments.insert({
@@ -45,5 +50,20 @@ db.comments.insertMany([{
 }
 ])
 
-Show all Rows in a collection (Prettified)
+Show all Rows in a collection (Prettified)===
 db.comments.find().pretty()
+
+
+
+Search in a MongoDB database ==
+db.comments.find({'lang': 'python'})
+
+Limit the number of rows in output==
+db.comments.find().limit(2)
+
+Count the number of rows in output==
+db.comments.find().count()
+
+Sorting Database==
+db.comments.find().sort({}).pretty()
+
