@@ -67,3 +67,39 @@ db.comments.find().count()
 Sorting Database==
 db.comments.find().sort({}).pretty()
 
+
+Update  a row==
+
+db.comments.update({'name': 'rhb'},
+{
+    'name': 'rhb',
+    'lang': 'JS',
+    'member_since': 51
+}, {upsert: true})
+
+MongoDB Increment Operator ==
+
+db.comments.update({'name': 'rhb'},
+{$inc:{
+    member_since: 2
+}})
+
+
+MongoDB Rename Operator ==
+
+db.comments.update({'name': 'rhb'},
+{$rename:{
+    member_since: member
+}})
+
+
+Delete Row ==
+db.comments.remove({'name': 'rhb'})
+
+
+Less than==
+db.comments.find({member_since: {$lt: 90}})
+
+
+Greater than==
+db.comments.find({member_since: {$gt: 90}})
