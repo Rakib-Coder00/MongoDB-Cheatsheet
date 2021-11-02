@@ -1,0 +1,49 @@
+View all databases :
+show bds;
+
+create ea new or switch databases:
+use dbName
+
+view current Database:
+db
+
+Delete Database :
+db.dropDatabase();
+
+Create a collection named 'myComments' 
+db.createCollection('myComments')
+
+Create a collection named 'myComments' 
+db.myComments.drop()
+
+MongoDb commands for rows:-
+Show all Rows in a collection
+db.comments.find()
+
+insert on Row ==
+db.comments.insert({
+    'name': 'rhb',
+    'lang': 'JS',
+    'member_since': 5
+})
+
+inset many rows== 
+db.comments.insertMany([{
+    'name': 'rhb',
+    'lang': 'JS',
+    'member_since':5
+},
+{
+    'name': 'rakib',
+    'lang': 'Python',
+    'member_since': 4
+},
+{
+    'name': 'rohan',
+    'lang': 'ruby',
+    'member_since':5
+}
+])
+
+Show all Rows in a collection (Prettified)
+db.comments.find().pretty()
